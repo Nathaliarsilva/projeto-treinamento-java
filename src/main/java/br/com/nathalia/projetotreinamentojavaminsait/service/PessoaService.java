@@ -27,11 +27,15 @@ public class PessoaService implements PessoaServiceInterface {
 
     @Override
     public Pessoa save(Pessoa pessoa) throws Exception {
-        if(validacoes.nomeValido(pessoa.getNome()) && validacoes.tamanhoUf(pessoa.getUf())){
-            pessoa.setUf(pessoa.getUf().toUpperCase());
-            return pessoaRepository.save(pessoa);
+        if(validacoes.nomeValido(pessoa.getNome())){
+            if(validacoes.tamanhoUf(pessoa.getUf()) && validacoes.ufValido(pessoa.getUf())){
+                pessoa.setUf(pessoa.getUf().toUpperCase());
+                return pessoaRepository.save(pessoa);
+            }else{
+                throw new Exception("UF inválido! Não utilize números nem caracteres especiais e deve haver 2 caracteres");
+            }
         }else{
-            throw new Exception("Nome inválido! Não utilize números nem caracteres especiais. UF apenas com tamanho 2");
+            throw new Exception("Nome inválido! Não utilize números nem caracteres especiais");
         }
     }
 
@@ -59,7 +63,7 @@ public class PessoaService implements PessoaServiceInterface {
                 newPessoa.setUf(upPessoa.getUf().toUpperCase());
                 return pessoaRepository.save(newPessoa);
             }else{
-                throw new Exception("Nome inválido! Não utilize números nem caracteres especiais. UF apenas com tamanho 2");
+                throw new Exception("Nome inválido! Não utilize números nem caracteres especiais. UF apenas com tamanho 2 alfa");
             }
 
         }

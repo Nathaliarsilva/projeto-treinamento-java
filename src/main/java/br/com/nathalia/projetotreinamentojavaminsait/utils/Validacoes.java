@@ -10,7 +10,7 @@ public class Validacoes {
     }
 
     public boolean nomeValido(String nome){
-        return nome.matches("[a-zA-Z\s]+");
+        return nome.matches("[A-zÀ-ú\s]+");
     }
 
     public boolean tamanhoUf(String uf){
@@ -18,5 +18,9 @@ public class Validacoes {
             return true;
         }
         return false;
+    }
+
+    public boolean ufValido(String uf){
+        return uf.matches("[A-z]+");
     }
 }
