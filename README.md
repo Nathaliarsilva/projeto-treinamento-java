@@ -17,7 +17,9 @@ Projeto CRUD Spring: API Rest para Controle de Contatos.
  - Pode testar os endpoints referente a Pessoa
  - Abra a aba contato-controller  
  - Pode testar os endpoints referente a Contato
-  
+
+[VÍDEO DO PROJETO FUNCIONANDO](https://www.loom.com/share/5a6652c534f84542844b6faf9a841233?sid=3090dc27-3cfe-423d-b56c-0e18b9718aef)
+ 
 ## API endpoints  
 Esses endpoints permitem que você faça operações de criação, leitura, atualização e exclusão de pessoas:
 &nbsp;
